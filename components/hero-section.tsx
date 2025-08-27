@@ -8,10 +8,10 @@ import Link from "next/link"
 const featuredBooks = [
   {
     id: 1,
-    title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
-    image: "/placeholder.svg?height=400&width=300&text=The+Great+Gatsby",
-    description: "A classic American novel about the Jazz Age and the American Dream.",
+    title: "Fazlul Bari Sharh Sahih Bukhari",
+    author: "Maulana Shabir Ahmad Usmani",
+    image: "/fd.jpg",
+    description: "A renowned Urdu commentary on Sahih Bukhari, offering deep insights into prophetic traditions and Islamic scholarship.",
   },
   {
     id: 2,
