@@ -49,18 +49,61 @@ export function BookForm({ book, onSubmit, onCancel, isLoading }: BookFormProps)
     await onSubmit(formData)
   }
 
-  const categories = [
-    "Fiction",
-    "Non-Fiction",
-    "Mystery",
-    "Romance",
-    "Science Fiction",
-    "Fantasy",
-    "Biography",
-    "History",
-    "Self-Help",
-    "Business",
-  ]
+const categories = [
+  // Old categories
+  "Fiction",
+  "Non-Fiction",
+  "Mystery",
+  "Romance",
+  "Science Fiction",
+  "Fantasy",
+  "Biography",
+  "History",
+  "Self-Help",
+  "Business",
+
+  // New categories
+  "Quran e Majeed",
+  "Tafseer ul Quran",
+  "Uloom e Quran",
+  "Tajweed o Qirat",
+  "Hadith",
+  "Usool e Hadith",
+  "Fiqh",
+  "Fatawa",
+  "Jadid Fiqh",
+  "Usool e Fiqh",
+  "Ahkam o Masail",
+  "Salah",
+  "Roza/Ramazan",
+  "Zakat",
+  "Hajj o Umrah",
+  "Nikah o Talaq",
+  "Islam",
+  "Islamic Beliefs",
+  "Khatm e Nubuwwat",
+  "Taqabul e Adyan",
+  "Deviant Sects",
+  "Seerat",
+  "Seerat e Sahaba",
+  "Tasawwuf",
+  "Tableegh",
+  "Islahi",
+  "Doa o Darood",
+  "Khutbaat o Maqalaat",
+  "Dictionaries",
+  "Encyclopedias",
+  "English Books",
+  "Falkiyaat",
+  "General",
+  "History",
+  "Khawateen",
+  "Children",
+  "Khwaab o Tabeer",
+  "Qiamat"
+];
+
+
 
   return (
     <Card className="w-full max-w-2xl mx-auto">

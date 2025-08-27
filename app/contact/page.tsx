@@ -133,21 +133,21 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">hello@Best E-booksbookstore.com</p>
+                    <p className="text-muted-foreground">hello@Beste-bookstore.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone className="h-5 w-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+92 123456789</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium">Address</p>
-                    <p className="text-muted-foreground">123 Book Street, Literary District, NY 10001</p>
+                    <p className="text-muted-foreground">F-6 Isb, Pakistan</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

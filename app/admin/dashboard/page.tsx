@@ -108,7 +108,7 @@ export default function AdminDashboard() {
     try {
       const [booksResponse, postsResponse, requestsResponse] = await Promise.all([
         fetch("/api/admin/books"),
-        fetch("/api/admin/blog"), // Use API endpoint instead of direct Supabase call
+        fetch("/api/admin/blog"),
         fetch("/api/admin/requests"),
       ])
 
@@ -133,13 +133,13 @@ export default function AdminDashboard() {
 
       setStats({
         totalBooks: books.length,
-        totalPosts: posts.length, // Use posts array length instead of count
+        totalPosts: posts.length,
         totalRequests: requests.length,
         pendingRequests: pendingRequests.length,
       })
 
-      setBooks(books.slice(0, 5))
-      setPosts(posts.slice(0, 5)) // Use posts from API response
+      setBooks(books)
+      setPosts(posts)
       setRequests(requests.slice(0, 10))
     } catch (error) {
       console.log("[v0] Error fetching data:", error)
@@ -193,7 +193,7 @@ export default function AdminDashboard() {
       const url = "/api/admin/blog"
       const method = editingPost ? "PUT" : "POST"
 
-      console.log("[v0] Submitting blog post:", postData) // Add debug logging
+      console.log("[v0] Submitting blog post:", postData)
 
       const response = await fetch(url, {
         method,
@@ -202,20 +202,19 @@ export default function AdminDashboard() {
       })
 
       const result = await response.json()
-      console.log("[v0] Blog submission result:", result) // Add debug logging
+      console.log("[v0] Blog submission result:", result)
 
       if (response.ok && result.success) {
-        // Check for success flag
         await fetchData()
         setShowBlogForm(false)
         setEditingPost(null)
       } else {
         console.error("[v0] Blog submission failed:", result.error)
-        alert(`Failed to save blog post: ${result.error || "Unknown error"}`) // Show error to user
+        alert(`Failed to save blog post: ${result.error || "Unknown error"}`)
       }
     } catch (error) {
       console.error("[v0] Error saving blog post:", error)
-      alert("Error saving blog post. Please try again.") // Show error to user
+      alert("Error saving blog post. Please try again.")
     } finally {
       setFormLoading(false)
     }
@@ -328,7 +327,7 @@ export default function AdminDashboard() {
               <div className="flex items-center gap-4">
                 <Link href="/" className="flex items-center gap-2">
                   <BookOpen className="h-6 w-6 text-primary" />
-                  <span className="font-serif text-xl font-bold">Best E-books</span>
+                  <span className="font-serif text-xl font-bold">Modern Bookstore</span>
                 </Link>
                 <Badge variant="secondary">Admin Panel</Badge>
                 {maintenanceMode && (
@@ -436,8 +435,8 @@ export default function AdminDashboard() {
                     </Button>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-4">
-                      {books.map((book) => (
+                    <div className="space-y-4 max-h-80 overflow-y-auto">
+                      {books.slice(0, 10).map((book) => (
                         <div key={book.id} className="flex items-center justify-between">
                           <div>
                             <p className="font-medium">{book.title}</p>
@@ -453,6 +452,9 @@ export default function AdminDashboard() {
                           </div>
                         </div>
                       ))}
+                      {books.length === 0 && (
+                        <p className="text-muted-foreground text-center py-4">No books added yet</p>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -467,8 +469,8 @@ export default function AdminDashboard() {
                     </Button>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-4">
-                      {posts.map((post) => (
+                    <div className="space-y-4 max-h-80 overflow-y-auto">
+                      {posts.slice(0, 10).map((post) => (
                         <div key={post.id} className="flex items-center justify-between">
                           <div>
                             <p className="font-medium">{post.title}</p>
@@ -486,6 +488,9 @@ export default function AdminDashboard() {
                           </div>
                         </div>
                       ))}
+                      {posts.length === 0 && (
+                        <p className="text-muted-foreground text-center py-4">No blog posts added yet</p>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -537,14 +542,14 @@ export default function AdminDashboard() {
             <TabsContent value="books">
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between">
-                  <CardTitle>Manage Books</CardTitle>
+                  <CardTitle>Manage Books ({books.length} total)</CardTitle>
                   <Button onClick={() => setShowBookForm(true)}>
                     <Plus className="h-4 w-4 mr-2" />
                     Add New Book
                   </Button>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
+                  <div className="space-y-4 max-h-96 overflow-y-auto">
                     {books.map((book) => (
                       <div key={book.id} className="flex items-center justify-between p-4 border rounded-lg">
                         <div className="flex-1">
@@ -553,9 +558,7 @@ export default function AdminDashboard() {
                           <p className="text-sm text-muted-foreground">{book.category}</p>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Badge variant={book.is_free ? "secondary" : "outline"}>
-                            {book.is_free ? "Free" : `$${book.price}`}
-                          </Badge>
+                          <Badge variant="secondary">Free</Badge>
                           <Button size="sm" variant="ghost" onClick={() => setEditingBook(book)}>
                             <Edit className="h-4 w-4" />
                           </Button>
@@ -565,6 +568,7 @@ export default function AdminDashboard() {
                         </div>
                       </div>
                     ))}
+                    {books.length === 0 && <p className="text-muted-foreground text-center py-8">No books added yet</p>}
                   </div>
                 </CardContent>
               </Card>
@@ -573,14 +577,14 @@ export default function AdminDashboard() {
             <TabsContent value="blog">
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between">
-                  <CardTitle>Manage Blog Posts</CardTitle>
+                  <CardTitle>Manage Blog Posts ({posts.length} total)</CardTitle>
                   <Button onClick={() => setShowBlogForm(true)}>
                     <Plus className="h-4 w-4 mr-2" />
                     New Blog Post
                   </Button>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
+                  <div className="space-y-4 max-h-96 overflow-y-auto">
                     {posts.map((post) => (
                       <div key={post.id} className="flex items-center justify-between p-4 border rounded-lg">
                         <div className="flex-1">
@@ -605,6 +609,9 @@ export default function AdminDashboard() {
                         </div>
                       </div>
                     ))}
+                    {posts.length === 0 && (
+                      <p className="text-muted-foreground text-center py-8">No blog posts added yet</p>
+                    )}
                   </div>
                 </CardContent>
               </Card>

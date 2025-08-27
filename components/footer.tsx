@@ -60,28 +60,28 @@ export function Footer() {
             <h3 className="font-semibold">Popular Categories</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/books?category=Fiction" className="text-muted-foreground hover:text-primary">
-                  Fiction
+                <Link href="/books?category=Tafseer" className="text-muted-foreground hover:text-primary">
+                  Tafseer
                 </Link>
               </li>
               <li>
-                <Link href="/books?category=Non-Fiction" className="text-muted-foreground hover:text-primary">
-                  Non-Fiction
+                <Link href="/books?category=Hadith" className="text-muted-foreground hover:text-primary">
+                  Hadith
                 </Link>
               </li>
               <li>
-                <Link href="/books?category=Technology" className="text-muted-foreground hover:text-primary">
-                  Technology
+                <Link href="/books?category=Fatwa" className="text-muted-foreground hover:text-primary">
+                  Fatwa
                 </Link>
               </li>
               <li>
-                <Link href="/books?category=Business" className="text-muted-foreground hover:text-primary">
-                  Business
+                <Link href="/books" className="text-muted-foreground hover:text-primary">
+                  General
                 </Link>
               </li>
               <li>
-                <Link href="/books?category=Self-Help" className="text-muted-foreground hover:text-primary">
-                  Self-Help
+                <Link href="/books?category=History" className="text-muted-foreground hover:text-primary">
+                  History
                 </Link>
               </li>
             </ul>
