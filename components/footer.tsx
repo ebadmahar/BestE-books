@@ -114,7 +114,6 @@ export function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-           <p>© 2024 Best E-books. All rights reserved.</p>
       <p>
         Developed by{" "}
         <a
