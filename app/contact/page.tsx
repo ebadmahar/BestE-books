@@ -133,7 +133,7 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">hello@modernbookstore.com</p>
+                    <p className="text-muted-foreground">hello@Best E-booksbookstore.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

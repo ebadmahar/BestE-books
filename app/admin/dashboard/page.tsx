@@ -328,7 +328,7 @@ export default function AdminDashboard() {
               <div className="flex items-center gap-4">
                 <Link href="/" className="flex items-center gap-2">
                   <BookOpen className="h-6 w-6 text-primary" />
-                  <span className="font-serif text-xl font-bold">Modern Bookstore</span>
+                  <span className="font-serif text-xl font-bold">Best E-books</span>
                 </Link>
                 <Badge variant="secondary">Admin Panel</Badge>
                 {maintenanceMode && (

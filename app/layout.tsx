@@ -17,9 +17,8 @@ const sourceSans = Source_Sans_3({
 })
 
 export const metadata: Metadata = {
-  title: "Modern Bookstore - Discover Amazing Books",
+  title: "Best E-books - Discover Amazing Books",
   description: "Explore our curated collection of books across various genres. Find your next great read today.",
-  generator: "v0.app",
 }
 
 export default function RootLayout({

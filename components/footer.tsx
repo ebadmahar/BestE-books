@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <BookOpen className="h-6 w-6 text-primary" />
-              <span className="font-serif text-xl font-bold">Modern Bookstore</span>
+              <span className="font-serif text-xl font-bold">Best E-books</span>
             </div>
             <p className="text-muted-foreground text-sm">
               Your trusted destination for quality books across all genres. Discover, learn, and grow with our curated
@@ -114,7 +114,7 @@ export function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-           <p>© 2024 Modern Bookstore. All rights reserved.</p>
+           <p>© 2024 Best E-books. All rights reserved.</p>
       <p>
         Developed by{" "}
         <a

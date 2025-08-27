@@ -7,7 +7,7 @@ export default function MaintenancePage() {
       <div className="w-full max-w-md text-center">
         <div className="flex items-center justify-center gap-2 mb-8">
           <BookOpen className="h-8 w-8 text-primary" />
-          <span className="font-serif text-2xl font-bold">Modern Bookstore</span>
+          <span className="font-serif text-2xl font-bold">Best E-books</span>
         </div>
 
         <Card>
@@ -26,7 +26,7 @@ export default function MaintenancePage() {
 
             <div className="text-sm text-muted-foreground">
               <p>Thank you for your patience.</p>
-              <p className="mt-2">- The Modern Bookstore Team</p>
+              <p className="mt-2">- The Best E-books Team</p>
             </div>
           </CardContent>
         </Card>

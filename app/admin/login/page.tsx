@@ -59,7 +59,7 @@ export default function AdminLoginPage() {
         <div className="flex flex-col items-center mb-8">
           <div className="flex items-center gap-2 mb-4">
             <BookOpen className="h-8 w-8 text-primary" />
-            <span className="font-serif text-2xl font-bold">Modern Bookstore</span>
+            <span className="font-serif text-2xl font-bold">Best E-books</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <Lock className="h-4 w-4" />
