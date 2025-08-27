@@ -93,20 +93,20 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">info@modernbookstore.com</span>
+                <span className="text-muted-foreground">info@bestebooks.org</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-muted-foreground">+92 123456789</span>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-primary mt-0.5" />
                 <span className="text-muted-foreground">
-                  123 Book Street
+                  F-6
                   <br />
-                  Reading City, RC 12345
+                  Islamabad
                   <br />
-                  United States
+                  Pakistan
                 </span>
               </div>
             </div>
@@ -114,13 +114,23 @@ export function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">© 2024 Modern Bookstore. All rights reserved.</p>
+           <p>© 2024 Modern Bookstore. All rights reserved.</p>
+      <p>
+        Developed by{" "}
+        <a
+          href="https://dev-mepk.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-primary underline"
+        >
+          DevEm
+        </a>{" "}
+        with passion and precision.
+      </p>
+
           <div className="flex gap-6 text-sm">
             <Link href="/privacy" className="text-muted-foreground hover:text-primary">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-muted-foreground hover:text-primary">
-              Terms of Service
+              Sitemap
             </Link>
             <Link href="/support" className="text-muted-foreground hover:text-primary">
               Support
